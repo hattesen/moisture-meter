@@ -26,9 +26,9 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
       Powered via interface cable, galvanically isolated to prevent ground current to impact low-current input
       * Galvanically isolated signals
       * Interface
-        * RS485 (multidrop)
-        * I2C (multidrop)
-        * OneWire (multidrop)
+        * RS485 multidrop, Modbus ASCII protocol
+        * I2C multidrop
+        * OneWire multidrop
     * Wireless
       Powered via battery (rechargable or replacable AA cells).
       * WiFi (AP and/or client)
@@ -45,6 +45,15 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
 * Firmware design
   * Remote communication
     All communication is initiated by remote system.
+    * Protocol(s)
+      * RS485 (wired)
+        * Modbus
+        * [SCPI](https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments)
+      * I2C (wired): Register convention
+      * WiFi (wireless)
+        * HTTP/REST (JSON)
+        * [LXI](https://en.wikipedia.org/wiki/LAN_eXtensions_for_Instrumentation) using [SCPI](https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments)
+      * Bluetooth (wireless): [OBEX](https://en.wikipedia.org/wiki/OBject_EXchange)
     * Configuration
       * Calibration values
       * Material Type (Species)
