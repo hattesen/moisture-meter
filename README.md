@@ -40,20 +40,20 @@ Includes temperature probe and Anemometer (hot wire type) for measuring air flow
           * LAN Access Profile (LAP) (as client, not server)
           * Serial Port Profile (SPP)
           * [OBject EXchange (OBEX)](https://en.wikipedia.org/wiki/OBject_EXchange)
-  * Firmware design
-    * Remote communication
-      All communication is initiated by remote system.
-      * Configuration
-        * Calibration values
-        * Material Type (Species)
-      * Input
-        * Calibration of temperature, log.amp, anemometer
-      * Output
-        * Probe resistance (and metadata)
-        * Temperature
-        * Moisture Content (MC%) of material.
-          Requires prior configuration of material. Dependent of temperature.
-        * Air Velocity (m/s, f/m, km/h)
-        * Power supply (battery) state
-        
+* Firmware design
+  * Remote communication
+    All communication is initiated by remote system.
+    * Configuration
+      * Calibration values
+      * Material Type (Species)
+    * Input
+      * Calibration of temperature, log.amp, anemometer
+    * Output
+      * Probe resistance (and metadata)
+      * Temperature
+      * Moisture Content (MC%) of material.
+        Requires prior configuration of material. Dependent of temperature.
+      * Air Velocity (m/s, f/m, km/h)
+      * Power supply (battery) state
+
         
