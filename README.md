@@ -1,10 +1,12 @@
-# moisture-meter
+# Industrial Moisture Meter
 
-A moisture meter design for (remote) measurement of wood, suitable for use in drying kilns.
+A moisture meter for (remote) measurement of wood.
 
-Temperature probe.
+Many probes can be monitored from a central location.
 
-Anemometer (hot wire type) for measuring air velocity.
+Suitable for use in drying kilns.
+
+Includes temperature probe and Anemometer (hot wire type) for measuring air flow in kiln.
 
 # Design
 
