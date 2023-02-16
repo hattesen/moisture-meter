@@ -6,7 +6,7 @@ Many probes can be monitored from a central location.
 
 Suitable for use in drying kilns.
 
-Includes temperature probe and Anemometer (hot wire type) for measuring air flow in kiln.
+Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
 
 # Design
 
