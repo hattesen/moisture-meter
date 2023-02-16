@@ -10,6 +10,8 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
 
 # Design
 
+* Requirements
+  * Operating temperatures: 0°C - 85°C (higher temperatures causes in less accurate results at low moisture content).
 * Hardware design
   High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   * Hardware Elements
