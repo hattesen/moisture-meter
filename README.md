@@ -12,14 +12,28 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
 
 * Requirements
   * Operating temperatures: 0°C - 85°C (higher temperatures causes in less accurate results at low moisture content).
+  * Resistances between 50 kΩ (Philipine Mahogany @ 25% MC) to 700 GΩ (Pine/Spruce @ 7% MC) must be covered.
 * Hardware design
   High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   * Hardware Elements
+    * Logarithmic Amplifier.
+      Using 3-4 FET-input Operational Amplifiers, and matched BJT transistors in feedback.
+      * Resistance and current measurements (assuming 3V reference): 10kΩ to 1 TΩ resistance resulting in currents of 3e-12 to 3e-4 A (3 pA to 300 µA), spanning 8 decades.
+      * reference resistance: 10 MΩ.
+      * Temperature compensation using reference resistance logarithm variance of approx -2mV/°K to compensate for temperature related change.
     * MCU (low power, if battery operated)
       Typically ARM Cortex M0, e.g. STM32G0, STM32L0, RP2040
-    * ADC (18+ bits, or 16 bits with PGA)
-    * High impedance logarithmic amplifier using 3-4 FET Operational Amplifiers
-    * Probes (nail-type) and probe interface (plug/terminal block)
+    * ADC
+      Use either MCU built-in ADC or external ADC depending on resolition and linearity.
+      LogAmp output varies by approx 60mV/decade and -2mV/°K. With 8 decades and a temperature range of -10°C - 85°C, a LogAmp output variance of 8*60 mV + 95*2 mV must be covered.
+      * Log Amp output ranges
+        * Reference LogAmp (10MΩ@3V, -10..85°C): 625..425 mV (580 mV @20°C)
+        * Measurement LogAmp (10kΩ..1TΩ, -10..85°C): 150..790 mV (280..760 mV @20°C)
+      * ADC resolution required to provide 0.1% MC resolution:
+        * Douglas Pine (@25°C): 22GΩ @7% MC, 500kΩ @25% MC => 5 decades => 300 mV LogAmp output variance.
+        * mV/%MC = 300/18 mV => 17mV/%MC => 1.7mV/0.1%MC
+        * Assuming a total ADC range of 0..1000mV a 10-bit ADC resolution will be sufficient to provide a 0.1% MC resolution.
+    * Probes (nail-type) and probe interface (plug/terminal block), e.g. Aviation Connectors (GX12 or GX16) using cores with individual shield connected to guard voltages (3V/0V).
   * Remote communication
     * Software update, configuration and log file access via USB MSD.
     * Wired
