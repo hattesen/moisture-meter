@@ -65,7 +65,7 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   Dual, ultra low input bias current (<1pA), low input offset
   * [HTCSEMI LMV358ARZ, 1pA bias, 0.5mV offset, $0.05](https://datasheet.lcsc.com/lcsc/2201141700_HTCSEMI-LMV358ARZ_C2928823.pdf)
   * [3PEAK LMV358A-SR, 1pA bias, 1mV offset, $0.07](https://datasheet.lcsc.com/lcsc/1811071714_3PEAK-LMV358A-SR_C98461.pdf)
-  * [3PEAK LMV324 **QUAD**, 1pA bias, 0.1mV offset, $0.16[(https://datasheet.lcsc.com/lcsc/1811071512_3PEAK-LMV324TP-SR_C90298.pdf) 
+  * [3PEAK LMV324 **QUAD**, 1pA bias, 0.1mV offset, $0.16](https://datasheet.lcsc.com/lcsc/1811071512_3PEAK-LMV324TP-SR_C90298.pdf) 
   * [HGSEMI LMV324M/TR, 1pA bias, 0.8 mV offset, $0.11](https://datasheet.lcsc.com/lcsc/1811021633_HGSEMI-LMV324M-TR_C316672.pdf)
   * [GS8052, 1pA bias, 2mV offset, $0.23](https://datasheet.lcsc.com/lcsc/2206101816_Gainsil-GS8052-SR_C157722.pdf)
   * [RS8752XK, 1pA bias, 1.5mV offset, $0.24](https://datasheet.lcsc.com/lcsc/2202251930_Jiangsu-RUNIC-Tech-RS8752XK_C236994.pdf)
