@@ -61,21 +61,37 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
 
 ### Components
 
-* Log OpAmp.
+* Log OpAmp.  
   Dual, ultra low input bias current (<1pA), low input offset
+  * [HTCSEMI LMV358ARZ, 1pA bias, 0.5mV offset, $0.05](https://datasheet.lcsc.com/lcsc/2201141700_HTCSEMI-LMV358ARZ_C2928823.pdf)
+  * [3PEAK LMV358A-SR, 1pA bias, 1mV offset, $0.07](https://datasheet.lcsc.com/lcsc/1811071714_3PEAK-LMV358A-SR_C98461.pdf)
+  * [3PEAK LMV324 **QUAD**, 1pA bias, 0.1mV offset, $0.16[(https://datasheet.lcsc.com/lcsc/1811071512_3PEAK-LMV324TP-SR_C90298.pdf) 
+  * [HGSEMI LMV324M/TR, 1pA bias, 0.8 mV offset, $0.11](https://datasheet.lcsc.com/lcsc/1811021633_HGSEMI-LMV324M-TR_C316672.pdf)
   * [GS8052, 1pA bias, 2mV offset, $0.23](https://datasheet.lcsc.com/lcsc/2206101816_Gainsil-GS8052-SR_C157722.pdf)
   * [RS8752XK, 1pA bias, 1.5mV offset, $0.24](https://datasheet.lcsc.com/lcsc/2202251930_Jiangsu-RUNIC-Tech-RS8752XK_C236994.pdf)
   * [Microchip MCP6022T, 1pA bias, 0.5mV offset, $0.68](https://datasheet.lcsc.com/lcsc/1809191930_Microchip-Tech-MCP6022T-I-SN_C57639.pdf)
   * [3PEAK TPH2502-SR, 0.3pA bias, 50uV offset, $0.69](https://datasheet.lcsc.com/lcsc/1810010114_3PEAK-TPH2502-SR_C118223.pdf)
+  * [TI TLV9004SIRTER **quad**, 5pA bias, 0.4mV offset, $0.25](https://www.ti.com/lit/ds/symlink/tlv9002.pdf)
+  * [TI TLV9002SIDGSR, 5pA bias, 0.4mV offset, $0.27](https://www.ti.com/lit/ds/symlink/tlv9002.pdf)
   * [TI LPV542, 1pA bias, 3mV offset, $0.92](https://www.ti.com/lit/gpn/LPV542)
   * [TI LMV797, 1pA bias, 1.35 mV offset, $1.11](https://www.ti.com/lit/gpn/LMV797)
   * [TI LMC6442, 50fA bias, 3mV offset, $1.50](https://www.ti.com/lit/gpn/LMC6442)
   * [TI OPA2365AIDR, 200fA bias, 0.1mV offset, $1.55](https://www.ti.com/lit/ds/symlink/opa2365.pdf)
   * [TI LMC6062, 100fA bias, 0.35mV offset, $2.00](https://www.ti.com/lit/gpn/LMC6062)
-* Amplifier OpAmp.
-  Amplifies Log output for ADC (approx x 3)
+* Amplifier OpAmp.  
+  Dual, amplifies Log output for ADC (approx x 3)
+  * [HTCSEMI LMV358ARZ, 1pA bias, 0.5mV offset, $0.05](https://datasheet.lcsc.com/lcsc/2201141700_HTCSEMI-LMV358ARZ_C2928823.pdf)
+  * [TI LMV358AIDR, 1 mV offset, $0.17 (alt src $0.05)](https://www.ti.com/lit/gpn/LMV358A)
 * Dual matched BJT (NPN)
-* Voltage Inverter
+  * [Diodes DMMT3904W, $0.06](https://datasheet.lcsc.com/lcsc/1808280024_Diodes-Incorporated-DMMT3904W-7-F_C155305.pdf)
+  * [Nexperia BCM847BS, $0.17](https://datasheet.lcsc.com/lcsc/2007030434_Nexperia-BCM847BS-135_C549556.pdf)
+* Input protection, ESD, surge
+  * Sense input  
+    Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.
+    * Dual NPN like DMMT3904W
+  * Ref voltage (approx 2.5V)
+    * [TVSS5VCES](https://datasheet.lcsc.com/lcsc/1912111437_SINO-IC-TVSS5VCES-02GP-J_C355254.pdf) or similar 5V TVSS Surge protector to GND.
+* Voltage Inverter  
   Provides negative supply voltage for OpAmps
 * TBD Isolated Power Supply (cabled connection)
 * TBD Isolated IO for host communication (RS485)
