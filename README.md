@@ -10,11 +10,14 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
 
 # Design
 
-* Requirements
+## Requirements
   * Operating temperatures: 0°C - 85°C (higher temperatures causes in less accurate results at low moisture content).
   * Resistances between 50 kΩ (Philipine Mahogany @ 25% MC) to 700 GΩ (Pine/Spruce @ 7% MC) must be covered.
-* Hardware design
-  High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
+
+## Hardware design
+
+High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
+
   * Hardware Elements
     * Logarithmic Amplifier.
       Using 3-4 FET-input Operational Amplifiers, and matched BJT transistors in feedback.
@@ -35,14 +38,13 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
         * Assuming a total ADC range of 0..1000mV a 10-bit ADC resolution will be sufficient to provide a 0.1% MC resolution.
     * Probes (nail-type) and probe interface (plug/terminal block), e.g. Aviation Connectors (GX12 or GX16) using cores with individual shield connected to guard voltages (3V/0V).
   * Remote communication
-    * Software update, configuration and log file access via USB MSD.
+    * Software update, configuration and log file access via USB MSD/MTP
     * Wired
       Powered via interface cable, galvanically isolated to prevent ground current to impact low-current input
       * Galvanically isolated signals
       * Interface
-        * RS485 multidrop, Modbus ASCII protocol
-        * I2C multidrop
-        * OneWire multidrop
+        * Isolated RS485 multidrop, Modbus ASCII protocol
+        * Isolated I2C multidrop
     * Wireless
       Powered via battery (rechargable or replacable AA cells).
       * WiFi (AP and/or client)
@@ -56,7 +58,29 @@ Optional (plug-in) hot wire type Anemometer for measuring air flow in kiln.
           * LAN Access Profile (LAP) (as client, not server)
           * Serial Port Profile (SPP)
           * [OBject EXchange (OBEX)](https://en.wikipedia.org/wiki/OBject_EXchange)
-* Firmware design
+
+### Components
+
+* Log OpAmp.
+  Dual, ultra low input bias current (<1pA), low input offset
+  * [GS8052, 1pA bias, 2mV offset, $0.23](https://datasheet.lcsc.com/lcsc/2206101816_Gainsil-GS8052-SR_C157722.pdf)
+  * [RS8752XK, 1pA bias, 1.5mV offset, $0.24](https://datasheet.lcsc.com/lcsc/2202251930_Jiangsu-RUNIC-Tech-RS8752XK_C236994.pdf)
+  * [Microchip MCP6022T, 1pA bias, 0.5mV offset, $0.68](https://datasheet.lcsc.com/lcsc/1809191930_Microchip-Tech-MCP6022T-I-SN_C57639.pdf)
+  * [3PEAK TPH2502-SR, 0.3pA bias, 50uV offset, $0.69](https://datasheet.lcsc.com/lcsc/1810010114_3PEAK-TPH2502-SR_C118223.pdf)
+  * [TI LPV542, 1pA bias, 3mV offset, $0.92](https://www.ti.com/lit/gpn/LPV542)
+  * [TI LMV797, 1pA bias, 1.35 mV offset, $1.11](https://www.ti.com/lit/gpn/LMV797)
+  * [TI LMC6442, 50fA bias, 3mV offset, $1.50](https://www.ti.com/lit/gpn/LMC6442)
+  * [TI OPA2365AIDR, 200fA bias, 0.1mV offset, $1.55](https://www.ti.com/lit/ds/symlink/opa2365.pdf)
+  * [TI LMC6062, 100fA bias, 0.35mV offset, $2.00](https://www.ti.com/lit/gpn/LMC6062)
+* Amplifier OpAmp.
+  Amplifies Log output for ADC (approx x 3)
+* Dual matched BJT (NPN)
+* Voltage Inverter
+  Provides negative supply voltage for OpAmps
+* TBD Isolated Power Supply (cabled connection)
+* TBD Isolated IO for host communication (RS485)
+  
+## Firmware design
   * Remote communication
     All communication is initiated by remote system.
     * Protocol(s)
