@@ -70,6 +70,7 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   * [GS8052, 1pA bias, 2mV offset, $0.23](https://datasheet.lcsc.com/lcsc/2206101816_Gainsil-GS8052-SR_C157722.pdf)
   * [RS8752XK, 1pA bias, 1.5mV offset, $0.24](https://datasheet.lcsc.com/lcsc/2202251930_Jiangsu-RUNIC-Tech-RS8752XK_C236994.pdf)
   * [TI LMV342IDR, 1pA bias, 6fA bias offset, 0.25mV offset, $0.32](https://www.ti.com/lit/ds/symlink/lmv342.pdf)
+  * [TI LMV344IDR **QUAD**, 1pA bias, 6fA bias offset, 0.25mV offset, $0.48](https://www.ti.com/lit/ds/symlink/lmv344.pdf)
   * [Microchip MCP6022T, 1pA bias, 0.5mV offset, $0.68](https://datasheet.lcsc.com/lcsc/1809191930_Microchip-Tech-MCP6022T-I-SN_C57639.pdf)
   * [3PEAK TPH2502-SR, 0.3pA bias, 50uV offset, $0.69](https://datasheet.lcsc.com/lcsc/1810010114_3PEAK-TPH2502-SR_C118223.pdf)
   * [TI TLV9004SIRTER **quad**, 5pA bias, 0.4mV offset, $0.25](https://www.ti.com/lit/ds/symlink/tlv9002.pdf)
