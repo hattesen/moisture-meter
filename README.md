@@ -86,6 +86,15 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
 * Dual matched BJT (NPN)
   * [Diodes DMMT3904W, $0.06](https://datasheet.lcsc.com/lcsc/1808280024_Diodes-Incorporated-DMMT3904W-7-F_C155305.pdf)
   * [Nexperia BCM847BS, $0.17](https://datasheet.lcsc.com/lcsc/2007030434_Nexperia-BCM847BS-135_C549556.pdf)
+* Voltage Inverter, charge pump, for OpAmp negative supply
+  - [HGSEMI TC7660, 10 kHz, 30 mA, $0.11](https://files.icx2.com/UploadFiles/eb57ece3-2819-4c1f-9a14-3404d5f8554f/docs/20221013154811_2975.pdf)
+  - [ME7660CS1G, <=10 kHz, 30 mA, $0.25](https://datasheet.lcsc.com/lcsc/1811151444_MICRONE-Nanjing-Micro-One-Elec-ME7660CS1G_C88402.pdf)
+  - [TI LM2664, 160 kHz, $0.44](https://datasheet.lcsc.com/lcsc/1809051020_Texas-Instruments-LM2664M6X-NOPB_C108573.pdf)
+  - [TI TL7660CDR, 10 kHz, $0.53 **also voltage doubler**](https://datasheet.lcsc.com/lcsc/1810181612_Texas-Instruments-TL7660CDR_C130206.pdf)
+  - [SGM3204, 950 kHz, 200 mA, $0.55](https://datasheet.lcsc.com/lcsc/1811091924_SGMICRO-SGM3204YN6G-TR_C194031.pdf)
+  - [TI TPS60403, 20-250 kHz, 60 mA, $0.55](https://www.ti.com/lit/ds/symlink/tps60400.pdf)
+  - [TI LM27762, 2 MHz, 250 mA, $0.81 **Positive and Negative Output Integrated Charge Pump Plus LDO**](https://datasheet.lcsc.com/lcsc/2001031722_Texas-Instruments-LM27762DSSR_C473398.pdf)
+ 
 * Input protection, ESD, surge
   * Sense input  
     Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.
