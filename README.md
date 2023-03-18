@@ -99,14 +99,13 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
  
 * Input protection, ESD, surge
   * Sense input  
-    Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.
+    Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.  
+    See article [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf)
     * Dual NPN like DMMT3904W
-  * Ref voltage (approx 2.5V)
-    * [TVSS5VCES](https://datasheet.lcsc.com/lcsc/1912111437_SINO-IC-TVSS5VCES-02GP-J_C355254.pdf) or similar 5V TVSS Surge protector to GND.
-* Voltage Inverter  
-  Provides negative supply voltage for OpAmps
+    * Low leakage dual diode [Nexperia BAV199, Ir: 3pA@75V@25°C](https://datasheet.lcsc.com/lcsc/2107272240_Nexperia-BAV199-235_C549304.pdf)
+  * Low leakage TVS diode like [Applied Power AR3321P1S](https://datasheet.lcsc.com/lcsc/2205171716_Applied-Power-AR3321P1S_C3002757.pdf), [Nexperia PTVS3V3D1BAL](https://datasheet.lcsc.com/lcsc/2006111312_Nexperia-PTVS3V3D1BALYL_C553419.pdf)
 * TBD Isolated Power Supply (cabled connection)
-* TBD Isolated IO for host communication (RS485)
+* TBD Isolated IO for cabled host communication (RS485)
   
 ## Firmware design
   * Remote communication
