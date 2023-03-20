@@ -79,6 +79,7 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   * [TI LPV542, 1pA bias, 3mV offset, $0.92](https://www.ti.com/lit/gpn/LPV542)
   * [TI LMV797, 1pA bias, 1.35 mV offset, $1.11](https://www.ti.com/lit/gpn/LMV797)
   * [TI LMC6442, 50fA bias, 3mV offset, $1.50](https://www.ti.com/lit/gpn/LMC6442)
+  * [TI LMC662C, 2fA bias, 1mV offset, $1.30](https://www.ti.com/lit/ds/symlink/lmc662.pdf)
   * [TI OPA2365AIDR, 200fA bias, 0.1mV offset, $1.55](https://www.ti.com/lit/ds/symlink/opa2365.pdf)
   * [TI LMC6062, 100fA bias, 0.35mV offset, $2.00](https://www.ti.com/lit/gpn/LMC6062)
 * Amplifier OpAmp.  
