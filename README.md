@@ -136,4 +136,7 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
       * Air Velocity (m/s, f/m, km/h)
       * Power supply (battery) state
 
-        
+## Resources
+
+* [Picoammeter Design](https://www.eevblog.com/forum/projects/picoammeter-design/msg790045/#msg790045)
+
