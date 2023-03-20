@@ -1,0 +1,18 @@
+# .gitattributes
+
+# For LFS (git large file system), see:
+# - https://git-lfs.com/
+# - https://rehansaeed.com/gitattributes-best-practices/
+
+# These files are binary and should be left untouched
+# (binary is an alias for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+*.gz binary
+*.zip binary
+*.7z binary
+
+*.pdf binary
