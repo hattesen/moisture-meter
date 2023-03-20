@@ -98,13 +98,16 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   - [TI TPS60403, 20-250 kHz, 60 mA, $0.55](https://www.ti.com/lit/ds/symlink/tps60400.pdf)
   - [TI LM27762, 2 MHz, 250 mA, $0.81 **Positive and Negative Output Integrated Charge Pump Plus LDO**](https://datasheet.lcsc.com/lcsc/2001031722_Texas-Instruments-LM27762DSSR_C473398.pdf)
  
-* Input protection, ESD, surge
+* Input protection, ESD
   * Sense input  
     Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.  
     See article [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf)
-    * Dual NPN like DMMT3904W
-    * Low leakage dual diode [Nexperia BAV199, Ir: 3pA@75V@25°C](https://datasheet.lcsc.com/lcsc/2107272240_Nexperia-BAV199-235_C549304.pdf)
-  * Low leakage TVS diode like [Applied Power AR3321P1S](https://datasheet.lcsc.com/lcsc/2205171716_Applied-Power-AR3321P1S_C3002757.pdf), [Nexperia PTVS3V3D1BAL](https://datasheet.lcsc.com/lcsc/2006111312_Nexperia-PTVS3V3D1BALYL_C553419.pdf)
+    * Low leakage back-to-back dual diode
+      * [Nexperia BAV199, Ir: 3pA@75V@25°C](https://datasheet.lcsc.com/lcsc/2107272240_Nexperia-BAV199-235_C549304.pdf)
+      * [Nexperia BAS416, Ir: 3pA@75V@25°C](https://assets.nexperia.com/documents/data-sheet/BAS416.pdf)
+  * Low leakage TVS diode
+    * [Applied Power AR3321P1S](https://datasheet.lcsc.com/lcsc/2205171716_Applied-Power-AR3321P1S_C3002757.pdf)
+    * [Nexperia PTVS3V3D1BAL](https://datasheet.lcsc.com/lcsc/2006111312_Nexperia-PTVS3V3D1BALYL_C553419.pdf)
 * TBD Isolated Power Supply (cabled connection)
 * TBD Isolated IO for cabled host communication (RS485)
   
