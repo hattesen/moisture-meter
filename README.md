@@ -100,8 +100,8 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
  
 * Input protection, ESD
   * Sense input  
-    Protected by back-to-back diodes or diode connected transistors directly to GND, as OpAmp will keep IN- == IN+ == GND.  
-    See article [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf)
+    Protected by back-to-back diodes GND, as OpAmp will keep IN- == IN+ == GND.  
+    See article [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf) and [ADA4530-1 datasheet schematic, figure 99](https://www.analog.com/media/en/technical-documentation/data-sheets/ada4530-1.pdf)
     * Low leakage back-to-back dual diode
       * [Nexperia BAV199, Ir: 3pA@75V@25°C](https://datasheet.lcsc.com/lcsc/2107272240_Nexperia-BAV199-235_C549304.pdf)
       * [Nexperia BAS416, Ir: 3pA@75V@25°C](https://assets.nexperia.com/documents/data-sheet/BAS416.pdf)
