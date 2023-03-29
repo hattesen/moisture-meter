@@ -21,7 +21,8 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
   * Hardware Elements
     * Logarithmic Amplifier.
       Using 3-4 FET-input Operational Amplifiers, and matched BJT transistors in feedback.
-      * Resistance and current measurements (assuming 3V reference): 10kΩ to 1 TΩ resistance resulting in currents of 3e-12 to 3e-4 A (3 pA to 300 µA), spanning 8 decades.
+      * [Discrete design](https://www.eevblog.com/forum/projects/home-brew-analog-computer-system/msg609959/#msg609959)
+      * Resistance and current measurements (assuming 2.5V reference): 10kΩ to 1 TΩ resistance resulting in currents of 3e-12 to 3e-4 A (3 pA to 300 µA), spanning 8 decades.
       * reference resistance: 10 MΩ.
       * Temperature compensation using reference resistance logarithm variance of approx -2mV/°K to compensate for temperature related change.
     * MCU (low power, if battery operated)
@@ -30,7 +31,7 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
       Use either MCU built-in ADC or external ADC depending on resolition and linearity.
       LogAmp output varies by approx 60mV/decade and -2mV/°K. With 8 decades and a temperature range of -10°C - 85°C, a LogAmp output variance of 8*60 mV + 95*2 mV must be covered.
       * Log Amp output ranges
-        * Reference LogAmp (10MΩ@3V, -10..85°C): 625..425 mV (580 mV @20°C)
+        * Reference LogAmp (10MΩ@2.5V, -10..85°C): 625..425 mV (580 mV @20°C)
         * Measurement LogAmp (10kΩ..1TΩ, -10..85°C): 150..790 mV (280..760 mV @20°C)
       * ADC resolution required to provide 0.1% MC resolution:
         * Douglas Pine (@25°C): 22GΩ @7% MC, 500kΩ @25% MC => 5 decades => 300 mV LogAmp output variance.
@@ -100,14 +101,17 @@ High resistance measurement (20kΩ - 1TΩ) using logarithmic amplifier.
  
 * Input protection, ESD
   * Sense input  
-    Protected by back-to-back diodes GND, as OpAmp will keep IN- == IN+ == GND.  
-    See article [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf) and [ADA4530-1 datasheet schematic, figure 99](https://www.analog.com/media/en/technical-documentation/data-sheets/ada4530-1.pdf)
+    Protected by back-to-back diodes to GND, as OpAmp will keep IN- == IN+ == GND.  
+    * [Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage](moisture-meter/documentation/Ultra-low Leakage ESD Protection Achieving 10.5 fA Leakage - Hall \(ISCAS, 2021\).pdf)
+    * [Guarded Limiters Improve High Impedance Sensor Dynamic Range](https://www.analog.com/media/en/technical-documentation/tech-articles/Guarded-Limiters-Improve-High-Impedance-Sensor-Dynamic-Range.pdf) implemented in [ADA4530-1 datasheet schematic, figure 99](https://www.analog.com/media/en/technical-documentation/data-sheets/ada4530-1.pdf)
+    * [High-impedance buffer amplifier’s input includes ESD protection](https://www.edn.com/high-impedance-buffer-amplifiers-input-includes-esd-protection/)
+  * Diodes
     * Low leakage back-to-back dual diode
       * [Nexperia BAV199, Ir: 3pA@75V@25°C](https://datasheet.lcsc.com/lcsc/2107272240_Nexperia-BAV199-235_C549304.pdf)
       * [Nexperia BAS416, Ir: 3pA@75V@25°C](https://assets.nexperia.com/documents/data-sheet/BAS416.pdf)
-  * Low leakage TVS diode
-    * [Applied Power AR3321P1S](https://datasheet.lcsc.com/lcsc/2205171716_Applied-Power-AR3321P1S_C3002757.pdf)
-    * [Nexperia PTVS3V3D1BAL](https://datasheet.lcsc.com/lcsc/2006111312_Nexperia-PTVS3V3D1BALYL_C553419.pdf)
+    * Low leakage TVS diode
+      * [Applied Power AR3321P1S](https://datasheet.lcsc.com/lcsc/2205171716_Applied-Power-AR3321P1S_C3002757.pdf)
+      * [Nexperia PTVS3V3D1BAL](https://datasheet.lcsc.com/lcsc/2006111312_Nexperia-PTVS3V3D1BALYL_C553419.pdf)
 * TBD Isolated Power Supply (cabled connection)
 * TBD Isolated IO for cabled host communication (RS485)
   
